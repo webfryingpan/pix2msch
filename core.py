@@ -23,13 +23,18 @@ colorarray = [
     243, 233, 121,
     116, 87, 206,
     255, 121, 94,
-    255, 170, 95
+    255, 170, 95,
+    58, 143, 100,
+    118, 138, 154,
+    228, 255, 214,
+    137, 118, 154,
+    94, 152, 141,
+    223, 130, 77,
     ]
-
 #convert array of ints into a list of tuples, then into a palette
 tuple_array = [tuple(colorarray[t*3:t*3+3]) for t in range(len(colorarray)//3)]
 palette = Image.new("P", (16, 16))
-palette.putpalette(colorarray*16)
+palette.putpalette(colorarray)
 palette.load()
 
 def quantize(img, dither, transparency_treshold):
